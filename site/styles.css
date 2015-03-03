@@ -1,5 +1,5 @@
 body {
-  background-color: #0052A3;
+  background-color: #4DB84D;
   color: yellow;
   font-family: sans-serif;
   }
@@ -7,6 +7,6 @@ body {
 li {display:inline-block;}
 
 h1{
-  font-size: 72px;
+  font-size: 60px;
   color: white;
   }
