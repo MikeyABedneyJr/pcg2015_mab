@@ -10,3 +10,16 @@ h1{
   font-size: 60px;
   color: white;
   }
+
+a:hover {
+    text-decoration: underline;
+  }
+
+#login_box{
+    padding: 100px 20px 300px 400px;
+    background-color: rgb(129, 131, 40);
+  }
+
+a.selected{
+    color:black; background-color: white;
+  }
