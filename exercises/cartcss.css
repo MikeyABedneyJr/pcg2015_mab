@@ -3,7 +3,7 @@ th, td, tr {
 border: 1px solid #cecfd5;
   padding: 10px 15px;
  }
-/*
- body{
-  background-color: green;
- }*/
+
+.qnty{
+  max-width: 60px;
+}
