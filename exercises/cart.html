@@ -1,24 +1,12 @@
-<!doctype HTML>
-<html>
-  <head>
-    <title>
-      Practice with Cart
-    </title>
-  <link href="cartcss.css"; type="text/css"; rel="stylesheet">
-  </head  >
-  <body>
-    <h1><u>Cart</u></h1>
-      <div id="login_box">
-        <form method="post">
-        Name: <input value="" name="name">
-        <br>
-        Email:  <input value="" name="e-mail">
-        <br>
-        Phone: <input value="" name="phone">
-      </form>
-      </div><br><br>
+<!doctype HTML> <html>   <head>     <title>       Practice with Cart
+</title>   <script src="cartscript.js"></script>   <link href="cartcss.css";
+type="text/css"; rel="stylesheet">   </head  >   <body>
+<h1><u>Cart</u></h1>       <div id="login_box">         <form method="post">
+Name: <input value="" name="name">         <br>         Email:  <input
+value="" name="e-mail">         <br>         Phone: <input value=""
+name="phone">       </form>       </div><br><br>
 
-        <table>
+        <table id="cart_main">
           <tr> <!-- Table Header Row -->
             <th>Line</th>
               <th>Qty</th>
@@ -28,36 +16,36 @@
                       <th>(Qty * Price)<br>Total</th>
                         <th>Actions</th>
           </tr>
-          <tr> <!-- Row 1 -->
-            <td class="line"></td>
-              <td><input type=number class="qnty"></input></td>  
-                <td class="product_number">FA9842</td>
-                  <td class="description">This does great stuff</td>
-                    <td class="price">20</td>
+          <tr class="cart_line"> <!-- Row 1 -->
+            <td>1</td>
+              <td class="qty"><input type=number class="cart_qty" value="0"></input></td>  
+                <td class="cart_product_number">FA9842</td>
+                  <td class="cart_description">This does great stuff</td>
+                    <td class="item_price">20</td>
                       <td class="item_total"></td>
-                        <td class="remove_item"></td>
+                        <td class="remove_item"><a href="#remove">Remove</a></td>
           </tr>
-          <tr> <!-- Row 2 -->
-            <td class="line"></td>
-              <td><input type=number class="qnty"></input></td>  
-                <td class="product_number">PC5150</td>
-                  <td class="description">This does okay stuff</td>
-                    <td class="price">15</td>
+          <tr class="cart_line"> <!-- Row 2 -->
+            <td>2</td>
+              <td class="qty"><input type=number class="cart_qty" value="0"></input></td>  
+                <td class="cart_product_number">PC5150</td>
+                  <td class="cart_description">This does okay stuff</td>
+                    <td class="item_price">15</td>
                       <td class="item_total"></td>
-                        <td class="remove_item">Remove</td>
+                        <td class="remove_item"><a href="#remove">Remove</a></td>
           </tr>
-          <tr> <!-- Row 3 -->
-            <td class="line"></td>
-              <td><input type=number class="qnty"></input></td>  
-                <td class="product_number">GH4743</td>
-                  <td class="description">This does crappy stuff</td>
-                    <td class="price">26</td>
+          <tr class="cart_line"> <!-- Row 3 -->
+            <td>3</td>
+              <td class="qty"><input type=number class="cart_qty" value="0"></input></td>  
+                <td class="cart_product_number">GH4743</td>
+                  <td class="cart_description">This does crappy stuff</td>
+                    <td class="item_price">26</td>
                       <td class="item_total"></td>
-                        <td class="remove_item">Remove</td>
+                        <td class="remove_item"><a href="#remove">Remove</a></td>
           </tr>
           <tr>
             <td colspan="4"></td>
-                      <td class="total">Total: </td>
-                        <td>$<div id="total"></div> 
+                      <td class="total" align="right">Total: </td>
+                        <td><div id="cart_total">$</div> 
         </table>
 </html>

@@ -7,3 +7,10 @@ border: 1px solid #cecfd5;
 .qnty{
   max-width: 60px;
 }
+.total{
+  font-size: 30px;
+}
+#total{
+  font-size: 30px;
+  
+}
