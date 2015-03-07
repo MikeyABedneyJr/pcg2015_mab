@@ -2,15 +2,21 @@
 <html>
   <head>
     <title>Registration page</title>
+        <script src="registration.js"></script>
   </head>
   <body>
+    
     <div id="login_box">
-      <form method="post">
-        Username:    <input value="" name="name"><br>         
-        Password: <input type="password" name="password"><br>
-        Email: <input type="email" name="email"><br>
-        Date of birth: <input type="date" name="dob">
+      <form method="post" id="registration">
+        <div id="errors" style="color: red;"></div>
+        Username:    <input value="" name="username" id="username"><br>         
+        Password: <input type="password" name="password" id="password"><br>
+        Verify password: <input type="password" name="verify_password" id="verify_password"><br>
+        Email: <input type="email" name="email" id="email"><br>
+        Date of birth: <input type="date" name="dob" id="dob">
       </form>
-      <input type="submit" name="Submit">
+      <input type="submit" value="Register">
     </div>
+
+  </body>
 </html>
