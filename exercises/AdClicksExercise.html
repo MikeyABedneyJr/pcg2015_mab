@@ -39,6 +39,7 @@ var Adclick = [
 
 // Run through the list and print each dictionary to the console log
 var getClick = function(Adclick){
+  report = [ ];
   for (var i = 0; i < Adclick.length; i++) {
     var obj = Adclick[i];  
     console.log(obj.url + " " + obj.customer_id + " " + obj.date + " " + obj.clicks);
