@@ -11,7 +11,11 @@ var Adclick = [
       "customer_id": "456",
       "date": "2015-12-31",
       "clicks": 34},
-    
+     
+     {"url": "a.example.com",
+      "customer_id": "456",
+      "date": "2015-12-30",
+      "clicks": 34},   
     {"url": "b.example.com",
       "customer_id": "123",
       "date": "2015-12-31",
@@ -33,13 +37,19 @@ var Adclick = [
       "clicks": 34},
     ];
 
+// Run through the list and print each dictionary to the console log
 var getClick = function(Adclick){
   for (var i = 0; i < Adclick.length; i++) {
     var obj = Adclick[i];  
     console.log(obj.url + " " + obj.customer_id + " " + obj.date + " " + obj.clicks);
-    };
-  }; 
-
+    if (obj.url === "a.example.com"){
+      if(obj.date === "2015-12-31"){
+        console.log("Urls & Dates match");
+        console.log(obj.clicks);
+    }}; 
+  };
+}; 
 getClick(Adclick);
-  
+
+
   </script>
