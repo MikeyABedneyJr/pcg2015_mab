@@ -1,0 +1,26 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+a = "a".charCodeAt(0);
+z = "z".charCodeAt(0);
+for (var c = a; c <= z; c++) {
+    var letter = String.fromCharCode(c);
+    //document.write(letter);
+    //document.write(c + "=" + letter+"<br>");
+}
+
+az = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+for (var i = 0; i < az.length; i++) {
+    document.write(az[i]);
+    //document.write(i + "="+az[i]);
+}
+
+function isAlpha(c){
+    var u = c.toUpperCase();
+    return !(az.indexOf(u) == -1);
+}
+</script>
+
+<a href="#a">A</a>;
