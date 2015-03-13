@@ -8,7 +8,7 @@ var object_list = [{"name":"Dog"},{"name":"Cat"},{"name":"Zebra"},{"name":"Pony"
 object_list.sort(function(a,b){
     if(a.name > b.name){
         return 1;
-    }else if(b.name < b.name){
+    }else if(a.name < b.name){
         return -1;
     }else{
         return 0;
