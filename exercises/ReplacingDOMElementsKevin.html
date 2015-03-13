@@ -67,10 +67,21 @@
     }
     for (var letter in directory) {
         var d = directory[letter];
-        document.write("===" + letter + "===" + "<br>");
+        var lower = letter.toLowerCase();
+        var head1 = document.createElement("h1");       //creates <h1>
+        head1.setAttribute("id", lower);                            // adds:  <h1 id = letter lowercased>
+        var textinfo = document.createTextNode("===" + letter + "==="); // create text to display
+        head1.appendChild(textinfo);     //add:   <h1 id = letter>   "===" + letter + "==="  </h1>
+        document.body.appendChild(head1);   // put everything above onto the body of page
+
         for (i in d) {
             var t = d[i];
-            document.write(" " + t["name"] + " " + t["suite"] + "<br>");
+            var makelistitem = document.createElement("li");
+            makelistitem.setAttribute("id", t);
+            var textintolist = document.createTextNode(" " + t["name"] + " " + t["suite"]);
+            makelistitem.appendChild(textintolist);
+            document.body.appendChild(makelistitem);
+
         }
 
     }
