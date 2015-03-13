@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    function createIndexItem(letter) {
+        var hash = letter.toLowerCase();
+        var display = letter.toUpperCase();
+        var anchorElement = document.createElement("a");
+        anchorElement.setAttribute("href", "#" + hash);
+        var text = document.createTextNode(display);
+        anchorElement.appendChild(text);
+        document.body.appendChild(anchorElement);
+    }
+    a = "a".charCodeAt(0);
+    z = "z".charCodeAt(0);
+    for (var c = a; c <= z; c++) {
+        var letter = String.fromCharCode(c);
+        createIndexItem(letter);
+    }
+    tenants = [
+        {
+            "name": "Kevin Long",
+            "suite": 111
+        },
+        {
+            "name": "Kay Long",
+            "suite": 112
+        },
+        {
+            "name": "John Long",
+            "suite": 113
+        },
+        {
+            "name": "Jack Richards",
+            "suite": 211
+        },
+        {
+            "name": "Arthur Wright",
+            "suite": 212
+        },
+        {
+            "name": "abc",
+            "suite": 123
+        },
+        {
+            "name": "31 flavors",
+            "suite": 231
+        },
+        {
+            "name": "!@#$%^&*()",
+            "suite": 213
+        }
+    ];
+    var directory = {};
+    for (var i in tenants) {
+        var t = tenants[i];
+        var first_letter = t["name"][0];
+        if (!directory.hasOwnProperty(first_letter)) {
+            directory[first_letter] = [];
+        }
+        directory[first_letter].push(t);
+
+    }
+    for (var letter in directory) {
+        var d = directory[letter];
+        document.write("===" + letter + "===" + "<br>");
+        for (i in d) {
+            var t = d[i];
+            document.write(" " + t["name"] + " " + t["suite"] + "<br>");
+        }
+
+    }
+</script>
+</body>
+</html>
