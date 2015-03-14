@@ -57,12 +57,35 @@
         }
     ];
 
+for (var a in tenants){
+    var b = tenants[a];
+    var all_upper = t["name"][0].toUpperCase();
+    var name = t.name;
+    var words = new RegExp(/^[ a-z]+$/i); 
+    //Regular expression to ignore anything not a number the i is case-insensitive
+
+    if (words.test(name)){
+        var name_parts = name.split();
+        if (name_parts >= 2){
+            lastname = name_parts[name_parts.length-1];
+            first_letter = lastname[0].toUpperCase();
+            // TODO: Add loop to sort all parts
+            t.sortname = lastname + name_parts[0];
+        }
+        else{
+            t.sortname = t.name;
+    else{
+        first_letter = "*";
+        t.sortname = t.name;
+    }}
+}}
+
 var keys = Object.keys(tenants);
-//     // console.log("KEYS BEFORE");
-//     // console.log(keys);
+    //     // console.log("KEYS BEFORE");
+    //     // console.log(keys);
     keys.sort();
-//     // console.log("KEY AFTER");
-//     // console.log(keys);
+    //     // console.log("KEY AFTER");
+    //     // console.log(keys);
 
 
     var directory = {};
