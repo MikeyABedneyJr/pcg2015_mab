@@ -68,7 +68,7 @@ var keys = Object.keys(tenants);
     var directory = {};
     for (var i in tenants) {
         var t = tenants[i];
-        var first_letter = t["name"][0];
+        var first_letter = t["name"][0].toUpperCase();
         if (!directory.hasOwnProperty(first_letter)) {
             directory[first_letter] = [];
         }
@@ -79,7 +79,7 @@ var keys = Object.keys(tenants);
         var d = directory[letter];
         var lower = letter.toLowerCase();
         var head1 = document.createElement("h1");       //creates <h1>
-        head1.setAttribute("id", lower);                            // adds:  <h1 id = letter lowercased>
+        head1.setAttribute("id", lower);          // adds:  <h1 id = letter lowercased>
         var textinfo = document.createTextNode("===" + letter + "==="); // create text to display
         head1.appendChild(textinfo);     //add:   <h1 id = letter>   "===" + letter + "==="  </h1>
         document.body.appendChild(head1);   // put everything above onto the body of page
