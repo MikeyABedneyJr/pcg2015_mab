@@ -1,26 +1,39 @@
+<!DOCTYPE html>
 <html>
-<head>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
 </head>
 <body>
 <script>
-a = "a".charCodeAt(0);
-z = "z".charCodeAt(0);
-for (var c = a; c <= z; c++) {
-    var letter = String.fromCharCode(c);
-    //document.write(letter);
-    //document.write(c + "=" + letter+"<br>");
-}
 
-az = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-for (var i = 0; i < az.length; i++) {
-    document.write(az[i]);
-    //document.write(i + "="+az[i]);
-}
 
-function isAlpha(c){
-    var u = c.toUpperCase();
-    return !(az.indexOf(u) == -1);
-}
+
+
+    az = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    for (var i = 0; i < az.length; i++) {
+        //createIndexItem(az[i])
+    }
+
+    function isAlpha(c){
+        var u = c.toUpperCase();
+        return !(az.indexOf(u) == -1);
+    }
+    function createIndexItem(letter) {
+        var hash = letter.toLowerCase();
+        var display = letter.toUpperCase();
+        var anchorElement = document.createElement("a");
+        anchorElement.setAttribute("href", "#" + hash);
+        var text = document.createTextNode(display);
+        anchorElement.appendChild(text);
+        document.body.appendChild(anchorElement);
+    }
+    a = "a".charCodeAt(0);
+    z = "z".charCodeAt(0);
+    for (var c = a; c <= z; c++) {
+        var letter = String.fromCharCode(c);
+        createIndexItem(letter)
+    }
 </script>
 
-<a href="#a">A</a>;
+</body>
