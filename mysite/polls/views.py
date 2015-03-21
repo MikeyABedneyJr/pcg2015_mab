@@ -4,6 +4,11 @@ from django.core.urlresolvers import reverse
 
 from polls.models import Choice, Question
 # ...
+def index(request):
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
+    output = ', '.join([p.question_text for p in latest_question_list])
+    return HttpResponse(output)
+
 def vote(request, question_id):
     p = get_object_or_404(Question, pk=question_id)
     try:
@@ -25,3 +30,6 @@ def vote(request, question_id):
 def results(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/results.html', {'question': question})
+
+def detail(request, question_id):
+    return HttpResponse("You're looking at question %s." % question_id)
