@@ -8,7 +8,7 @@ from rango.models import Category, Page
 
 
 def populate():
-    python_cat = add_cat('Python')
+    python_cat = add_cat('Python', 234, 13434)
 
     add_page(cat=python_cat,
         title="Official Python Tutorial",
@@ -22,7 +22,7 @@ def populate():
         title="Learn Python in 10 Minutes",
         url="http://www.korokithakis.net/tutorials/python/")
 
-    django_cat = add_cat("Django")
+    django_cat = add_cat("Django", 1234, 235409)
 
     add_page(cat=django_cat,
         title="Official Django Tutorial",
@@ -36,7 +36,7 @@ def populate():
         title="How to Tango with Django",
         url="http://www.tangowithdjango.com/")
 
-    frame_cat = add_cat("Other Frameworks")
+    frame_cat = add_cat("Other Frameworks", 245, 11)
 
     add_page(cat=frame_cat,
         title="Bottle",
@@ -53,15 +53,16 @@ def populate():
 
 def add_page(cat, title, url, views=0):
     p = Page.objects.get_or_create(category=cat, title=title)[0]
-        p.url=url
-        p.views=views
-        p.save()
+    p.url=url
+    p.views=views
+    p.save()
     return p
 
-def add_cat(name):
-    c = Category.objects.get_or_create(name=name)[0]
+def add_cat(name, views, likes):
+    c = Category.objects.get_or_create(name=name, views=views, likes=likes)[0]
     return c
 
 # Start execution here!
 if __name__ == '__main__':
     print "Starting Rango population script..."
+    populate() #now will print all code
