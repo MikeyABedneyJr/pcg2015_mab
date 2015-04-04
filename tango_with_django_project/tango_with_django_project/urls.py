@@ -1,4 +1,6 @@
 from django.conf import settings
+from django.contrib import admin
+from django.conf.urls import patterns, url, include
 
 urlpatterns = patterns('',
     # Examples:
@@ -10,8 +12,8 @@ urlpatterns = patterns('',
 )
 
 if settings.DEBUG:
-    urlpatterns += patters(
+    urlpatterns += patterns(
         'django.views.static',
         (r'^media/(?P<path>.*)',
-         'serve',
-         {'document_root': settings.MEDIA_ROOT}), )
+        'serve',
+        {'document_root': settings.MEDIA_ROOT}), )
