@@ -13,4 +13,5 @@ def index(request):
 
     return render(request, 'rango/index.html', context_dict)
 def about(request):
-    return HttpResponse("Rango says here is the about page")
+    context_dict2 = {'boldmessage': "This text comes from a dictionary in views.py"}
+    return render(request, 'rango/about.html', context_dict2)
